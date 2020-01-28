@@ -167,8 +167,15 @@ function processContains(/* CODE HERE */item, list, callback) {
  * [2] Invoking `processDuplicateFree` passing `[1,1,2,2,3]` and `(arr) => arr.length`,
  * should return 3.
 */
-function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */) {
+function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */list, callback) {
   /* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */
+  let de_duped = [];
+  for(let i = 0; i < list.length; i++){
+    if(!de_duped.includes(list[i])){
+      de_duped.push(list[i]);
+    }
+  }
+  return callback(de_duped);
 }
 
 /////////////// HIGHER-ORDER ARRAY METHODS ///////////////
@@ -296,7 +303,7 @@ function counterMakerWithLimit(/* CODE HERE */maxCount) {
   /* CODE HERE */
   let count = 0;
   function counter(){
-    if(count<= maxCount){
+    if(count <= maxCount){
       return count++;
     } else {
       count = 0;
